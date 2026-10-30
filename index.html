@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Collaboration</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 20px 30px;
+        }
+
+        header h1 {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        header p {
+            color: #64748b;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 40px 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: white;
+            width: 300px;
+            padding: 35px 25px;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .icon {
+            font-size: 45px;
+            margin-bottom: 20px;
+        }
+
+        .card h2 {
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
+            font-size: 16px;
+            color: #64748b;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            font-size: 14px;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .card-1 .btn {
+            background: #2563eb;
+        }
+
+        .card-2 .btn {
+            background: #059669;
+        }
+
+        .btn:hover {
+            opacity: 0.8;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #64748b;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Tim Kolaborasi GitHub</h1>
+        <p>Belajar bekerja sama dalam satu proyek website</p>
+    </header>
+
+    <main class="container">
+
+        <!-- CARD 1: ANGGOTA PERTAMA -->
+        <div class="card card-1">
+            <div class="icon">👨‍💻</div>
+
+            <h2>Card 1</h2>
+            <h3>Frontend Developer</h3>
+
+            <p>
+                Bertugas membuat struktur halaman
+                website menggunakan HTML.
+            </p>
+
+            <a href="#" class="btn">Lihat Profil</a>
+        </div>
+
+        <!-- CARD 2: ANGGOTA KEDUA -->
+        <div class="card card-2">
+            <div class="icon">🎨</div>
+
+            <h2>Card 2</h2>
+            <h3>UI Designer</h3>
+
+            <p>
+                Bertugas membuat tampilan website
+                menggunakan CSS.
+            </p>
+
+            <a href="#" class="btn">Lihat Profil</a>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>© 2026 - Praktik GitHub Collaboration</p>
+    </footer>
+
+</body>
+</html>
