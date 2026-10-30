@@ -1,161 +1,192 @@
-
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub Collaboration</title>
-
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background: #f1f5f9;
-            color: #1e293b;
-            min-height: 100vh;
-        }
-
-        header {
-            text-align: center;
-            padding: 60px 20px 30px;
-        }
-
-        header h1 {
-            font-size: 32px;
-            margin-bottom: 12px;
-        }
-
-        header p {
-            color: #64748b;
-        }
-
-        .container {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            padding: 40px 20px;
-            flex-wrap: wrap;
-        }
-
-        .card {
-            background: white;
-            width: 300px;
-            padding: 35px 25px;
-            text-align: center;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-        }
-
-        .icon {
-            font-size: 45px;
-            margin-bottom: 20px;
-        }
-
-        .card h2 {
-            margin-bottom: 10px;
-        }
-
-        .card h3 {
-            font-size: 16px;
-            color: #64748b;
-            margin-bottom: 15px;
-        }
-
-        .card p {
-            font-size: 14px;
-            line-height: 1.7;
-            margin-bottom: 25px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 25px;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            transition: 0.3s;
-        }
-
-        .card-1 .btn {
-            background: #2563eb;
-        }
-
-        .card-2 .btn {
-            background: #059669;
-        }
-
-        .btn:hover {
-            opacity: 0.8;
-        }
-
-        footer {
-            text-align: center;
-            padding: 30px;
-            color: #64748b;
-        }
-
-        @media (max-width: 600px) {
-            .container {
-                flex-direction: column;
-                align-items: center;
+    <title>GitHub Collaboration - Dark Emerald Theme</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            400: '#34d399',
+                            500: '#10b981',
+                            600: '#059669',
+                            900: '#064e3b',
+                            accent: '#00ff87',
+                        },
+                        darkbg: '#0a0f0d',
+                        darkcard: '#121a16',
+                        darkborder: '#1f2e27',
+                    },
+                    boxShadow: {
+                        'neon': '0 0 20px rgba(16, 185, 129, 0.25)',
+                        'neon-hover': '0 0 30px rgba(0, 255, 135, 0.45)',
+                    }
+                }
             }
+        }
+    </script>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #080c0a;
+        }
+        .glow-bg {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.12) 0%, rgba(0, 0, 0, 0) 70%);
+            top: -150px;
+            left: 50%;
+            transform: translateX(-50%);
+            pointer-events: none;
+            z-index: 0;
         }
     </style>
 </head>
+<body class="text-slate-200 min-h-screen flex flex-col justify-between relative overflow-x-hidden">
 
-<body>
+    <!-- Background Glow Effect -->
+    <div class="glow-bg"></div>
 
-    <header>
-        <h1>Tim Kolaborasi GitHub</h1>
-        <p>Belajar bekerja sama dalam satu proyek website</p>
-    </header>
-
-    <main class="container">
-
-        <!-- CARD 1: ANGGOTA PERTAMA -->
-        <div class="card card-1">
-            <div class="icon">👨‍💻</div>
-
-            <h2>Card 1</h2>
-            <h3>Frontend Developer</h3>
-
-            <p>
-                Bertugas membuat struktur halaman
-                website menggunakan HTML.
+    <div class="relative z-10 flex-grow">
+        <!-- HEADER -->
+        <header class="text-center pt-16 pb-10 px-4 max-w-4xl mx-auto">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/60 border border-emerald-800/40 text-emerald-400 text-xs font-semibold mb-6 tracking-wide uppercase shadow-inner">
+                <i class="fa-brands fa-github text-sm"></i> GitHub Team Showcase
+            </div>
+            <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-white mb-4">
+                Tim Kolaborasi <span class="bg-gradient-to-r from-emerald-400 to-brand-accent bg-clip-text text-transparent">GitHub</span>
+            </h1>
+            <p class="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto font-light leading-relaxed">
+                Platform inovatif untuk belajar, membangun, dan menyempurnakan proyek website secara bersama dalam satu ekosistem terpadu.
             </p>
+        </header>
 
-            <a href="#" class="btn">Lihat Profil</a>
-        </div>
+        <!-- MAIN CONTAINER WITH 6 CARDS -->
+        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-        <!-- CARD 2: ANGGOTA KEDUA -->
-        <div class="card card-2">
-            <div class="icon">🎨</div>
+                <!-- CARD 1: Frontend Developer -->
+                <div class="group relative bg-gradient-to-b from-darkcard to-[#0d1410] border border-darkborder hover:border-emerald-500/60 rounded-2xl p-7 transition-all duration-300 hover:-translate-y-2 hover:shadow-neon-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-emerald-950/80 border border-emerald-800/50 flex items-center justify-center text-emerald-400 text-2xl mb-6 group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-black transition-all duration-300">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <span class="text-xs font-bold text-emerald-400 tracking-wider uppercase bg-emerald-950/50 border border-emerald-900/50 px-2.5 py-1 rounded-md">Card 1</span>
+                        <h2 class="text-xl font-bold text-white mt-3 mb-1 group-hover:text-emerald-400 transition-colors">Frontend Developer</h2>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Bertugas merancang dan menyusun struktur utama halaman website menggunakan HTML5 semantik serta arsitektur modern.
+                        </p>
+                    </div>
+                    <a href="#" class="w-full text-center py-3 px-4 rounded-xl bg-emerald-950/60 hover:bg-emerald-500 hover:text-black text-emerald-400 font-semibold text-sm border border-emerald-800/40 hover:border-emerald-400 transition-all duration-300 flex items-center justify-center gap-2 group/btn">
+                        Lihat Profil <i class="fa-solid fa-arrow-right text-xs group-hover/btn:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
 
-            <h2>Card 2</h2>
-            <h3>UI Designer</h3>
+                <!-- CARD 2: UI Designer -->
+                <div class="group relative bg-gradient-to-b from-darkcard to-[#0d1410] border border-darkborder hover:border-emerald-500/60 rounded-2xl p-7 transition-all duration-300 hover:-translate-y-2 hover:shadow-neon-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-emerald-950/80 border border-emerald-800/50 flex items-center justify-center text-emerald-400 text-2xl mb-6 group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-black transition-all duration-300">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+                        <span class="text-xs font-bold text-emerald-400 tracking-wider uppercase bg-emerald-950/50 border border-emerald-900/50 px-2.5 py-1 rounded-md">Card 2</span>
+                        <h2 class="text-xl font-bold text-white mt-3 mb-1 group-hover:text-emerald-400 transition-colors">UI/UX Designer</h2>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Bertugas memformulasikan tampilan antarmuka visual yang estetik, sistematis, dan mudah digunakan dengan Tailwind CSS.
+                        </p>
+                    </div>
+                    <a href="#" class="w-full text-center py-3 px-4 rounded-xl bg-emerald-950/60 hover:bg-emerald-500 hover:text-black text-emerald-400 font-semibold text-sm border border-emerald-800/40 hover:border-emerald-400 transition-all duration-300 flex items-center justify-center gap-2 group/btn">
+                        Lihat Profil <i class="fa-solid fa-arrow-right text-xs group-hover/btn:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
 
-            <p>
-                Bertugas membuat tampilan website
-                menggunakan CSS.
-            </p>
+                <!-- CARD 3: Backend Engineer -->
+                <div class="group relative bg-gradient-to-b from-darkcard to-[#0d1410] border border-darkborder hover:border-emerald-500/60 rounded-2xl p-7 transition-all duration-300 hover:-translate-y-2 hover:shadow-neon-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-emerald-950/80 border border-emerald-800/50 flex items-center justify-center text-emerald-400 text-2xl mb-6 group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-black transition-all duration-300">
+                            <i class="fa-solid fa-server"></i>
+                        </div>
+                        <span class="text-xs font-bold text-emerald-400 tracking-wider uppercase bg-emerald-950/50 border border-emerald-900/50 px-2.5 py-1 rounded-md">Card 3</span>
+                        <h2 class="text-xl font-bold text-white mt-3 mb-1 group-hover:text-emerald-400 transition-colors">Backend Engineer</h2>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Mengelola logika server, arsitektur basis data, serta mengamankan skema komunikasi RESTful API secara handal.
+                        </p>
+                    </div>
+                    <a href="#" class="w-full text-center py-3 px-4 rounded-xl bg-emerald-950/60 hover:bg-emerald-500 hover:text-black text-emerald-400 font-semibold text-sm border border-emerald-800/40 hover:border-emerald-400 transition-all duration-300 flex items-center justify-center gap-2 group/btn">
+                        Lihat Profil <i class="fa-solid fa-arrow-right text-xs group-hover/btn:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
 
-            <a href="#" class="btn">Lihat Profil</a>
-        </div>
+                <!-- CARD 4: DevOps Specialist -->
+                <div class="group relative bg-gradient-to-b from-darkcard to-[#0d1410] border border-darkborder hover:border-emerald-500/60 rounded-2xl p-7 transition-all duration-300 hover:-translate-y-2 hover:shadow-neon-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-emerald-950/80 border border-emerald-800/50 flex items-center justify-center text-emerald-400 text-2xl mb-6 group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-black transition-all duration-300">
+                            <i class="fa-solid fa-cloud-bolt"></i>
+                        </div>
+                        <span class="text-xs font-bold text-emerald-400 tracking-wider uppercase bg-emerald-950/50 border border-emerald-900/50 px-2.5 py-1 rounded-md">Card 4</span>
+                        <h2 class="text-xl font-bold text-white mt-3 mb-1 group-hover:text-emerald-400 transition-colors">DevOps Specialist</h2>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Mengatur alur kerja CI/CD, otomatisasi pengujian, dan mengelola infrastruktur cloud agar selalu optimal.
+                        </p>
+                    </div>
+                    <a href="#" class="w-full text-center py-3 px-4 rounded-xl bg-emerald-950/60 hover:bg-emerald-500 hover:text-black text-emerald-400 font-semibold text-sm border border-emerald-800/40 hover:border-emerald-400 transition-all duration-300 flex items-center justify-center gap-2 group/btn">
+                        Lihat Profil <i class="fa-solid fa-arrow-right text-xs group-hover/btn:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
 
-    </main>
+                <!-- CARD 5: QA Engineer -->
+                <div class="group relative bg-gradient-to-b from-darkcard to-[#0d1410] border border-darkborder hover:border-emerald-500/60 rounded-2xl p-7 transition-all duration-300 hover:-translate-y-2 hover:shadow-neon-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-emerald-950/80 border border-emerald-800/50 flex items-center justify-center text-emerald-400 text-2xl mb-6 group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-black transition-all duration-300">
+                            <i class="fa-solid fa-bug-slash"></i>
+                        </div>
+                        <span class="text-xs font-bold text-emerald-400 tracking-wider uppercase bg-emerald-950/50 border border-emerald-900/50 px-2.5 py-1 rounded-md">Card 5</span>
+                        <h2 class="text-xl font-bold text-white mt-3 mb-1 group-hover:text-emerald-400 transition-colors">QA Engineer</h2>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Memastikan kualitas performa aplikasi, meminimalkan bug, dan memverifikasi fungsionalitas fitur sesuai standar.
+                        </p>
+                    </div>
+                    <a href="#" class="w-full text-center py-3 px-4 rounded-xl bg-emerald-950/60 hover:bg-emerald-500 hover:text-black text-emerald-400 font-semibold text-sm border border-emerald-800/40 hover:border-emerald-400 transition-all duration-300 flex items-center justify-center gap-2 group/btn">
+                        Lihat Profil <i class="fa-solid fa-arrow-right text-xs group-hover/btn:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
 
-    <footer>
-        <p>© 2026 - Praktik GitHub Collaboration</p>
+                <!-- CARD 6: Project Manager -->
+                <div class="group relative bg-gradient-to-b from-darkcard to-[#0d1410] border border-darkborder hover:border-emerald-500/60 rounded-2xl p-7 transition-all duration-300 hover:-translate-y-2 hover:shadow-neon-hover flex flex-col justify-between">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-emerald-950/80 border border-emerald-800/50 flex items-center justify-center text-emerald-400 text-2xl mb-6 group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-black transition-all duration-300">
+                            <i class="fa-solid fa-list-check"></i>
+                        </div>
+                        <span class="text-xs font-bold text-emerald-400 tracking-wider uppercase bg-emerald-950/50 border border-emerald-900/50 px-2.5 py-1 rounded-md">Card 6</span>
+                        <h2 class="text-xl font-bold text-white mt-3 mb-1 group-hover:text-emerald-400 transition-colors">Project Manager</h2>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Mengoordinasikan alur kerja tim, mengelola timeline proyek, dan memfasilitasi komunikasi kolaborasi antar divisi.
+                        </p>
+                    </div>
+                    <a href="#" class="w-full text-center py-3 px-4 rounded-xl bg-emerald-950/60 hover:bg-emerald-500 hover:text-black text-emerald-400 font-semibold text-sm border border-emerald-800/40 hover:border-emerald-400 transition-all duration-300 flex items-center justify-center gap-2 group/btn">
+                        Lihat Profil <i class="fa-solid fa-arrow-right text-xs group-hover/btn:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="relative z-10 border-t border-darkborder py-8 mt-12 text-center text-slate-500 text-sm">
+        <p>© 2026 - Praktik GitHub Collaboration. All Rights Reserved.</p>
     </footer>
 
 </body>
