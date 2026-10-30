@@ -16,20 +16,29 @@
             background-color: #08090c;
             color: #f1f5f9;
             min-height: 100vh;
+            padding: 2rem;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 2rem 1rem;
+            align-items: center; /* Posisi Vertikal Center */
         }
 
-        /* CONTAINER UTAMA / WRAPPER TABEL KANAN */
-        .guest-section {
+        /* CONTAINER DUA KOLOM SIDE-BY-SIDE */
+        .collaboration-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Kolom 1 (Kiri/Pemilik) & Kolom 2 (Kanan/Tamu) */
+            gap: 2rem;
             width: 100%;
-            max-width: 680px;
+            max-width: 1300px;
+            margin: 0 auto;
+            align-items: center; /* Center Vertikal */
+        }
+
+        /* TABEL TAMU KUNCI DI SISI KANAN (KOLOM 2) */
+        .guest-section {
+            grid-column: 2; /* Mengunci tabel tamu di kolom kanan */
             background: rgba(15, 17, 23, 0.85);
             border: 1px solid rgba(225, 29, 72, 0.3);
             border-radius: 16px;
-            padding: 28px;
+            padding: 24px;
             backdrop-filter: blur(12px);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 
                         0 0 25px rgba(225, 29, 72, 0.12);
@@ -47,13 +56,13 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 24px;
-            padding-bottom: 16px;
+            margin-bottom: 20px;
+            padding-bottom: 14px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .header-title h2 {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 700;
             color: #ffffff;
             letter-spacing: -0.5px;
@@ -64,9 +73,9 @@
             background: rgba(225, 29, 72, 0.15);
             color: #ff4d6d;
             border: 1px solid rgba(225, 29, 72, 0.35);
-            padding: 4px 12px;
+            padding: 3px 10px;
             border-radius: 20px;
-            font-size: 11px;
+            font-size: 10px;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -74,10 +83,10 @@
         }
 
         .count-tag {
-            font-size: 13px;
+            font-size: 12px;
             color: #94a3b8;
             background: rgba(255, 255, 255, 0.05);
-            padding: 6px 12px;
+            padding: 4px 10px;
             border-radius: 8px;
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
@@ -90,7 +99,7 @@
         .modern-table {
             width: 100%;
             border-collapse: separate;
-            border-spacing: 0 10px;
+            border-spacing: 0 8px;
             text-align: left;
         }
 
@@ -99,7 +108,7 @@
             font-size: 11px;
             text-transform: uppercase;
             letter-spacing: 1.2px;
-            padding: 0 16px 8px;
+            padding: 0 12px 6px;
             font-weight: 600;
         }
 
@@ -116,8 +125,8 @@
         }
 
         .modern-table td {
-            padding: 16px;
-            font-size: 14px;
+            padding: 12px;
+            font-size: 13px;
             color: #cbd5e1;
         }
 
@@ -126,7 +135,7 @@
             border-bottom-left-radius: 10px;
             font-weight: 700;
             color: #ff4d6d;
-            width: 50px;
+            width: 40px;
         }
 
         .modern-table td:last-child {
@@ -138,37 +147,37 @@
         .user-cell {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             font-weight: 600;
             color: #f8fafc;
         }
 
         .avatar {
-            width: 34px;
-            height: 34px;
+            width: 30px;
+            height: 30px;
             border-radius: 50%;
             background: linear-gradient(135deg, #e11d48, #881337);
             color: #ffffff;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 700;
-            box-shadow: 0 0 12px rgba(225, 29, 72, 0.4);
+            box-shadow: 0 0 10px rgba(225, 29, 72, 0.4);
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .role-text {
             color: #94a3b8;
-            font-size: 13px;
+            font-size: 12px;
         }
 
         /* BADGES STATUS PULL REQUEST */
         .status-pill {
             display: inline-block;
-            padding: 5px 12px;
+            padding: 4px 10px;
             border-radius: 6px;
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 600;
             letter-spacing: 0.3px;
         }
@@ -190,414 +199,26 @@
             color: #ff4d6d;
             border: 1px solid rgba(225, 29, 72, 0.35);
         }
-    </style>
-</head>
-<body>
 
-    <!-- CONTAINER TABEL TAMU (BAGIAN KANAN) -->
-    <div class="guest-section">
-        <div class="table-header">
-            <div class="header-title">
-                <span class="badge-red">Guest Contributor</span>
-                <h2>Tabel Anggota Tamu</h2>
-            </div>
-            <span class="count-tag">3 Kontributor</span>
-        </div>
-
-        <div class="table-wrapper">
-            <table class="modern-table">
-                <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>Nama Tamu</th>
-                        <th>Peran / Tugas</th>
-                        <th>Status PR</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>01</td>
-                        <td>
-                            <div class="user-cell">
-                                <span class="avatar">T1</span>
-                                Asep Supriatna
-                            </div>
-                        </td>
-                        <td><span class="role-text">Frontend Contributor</span></td>
-                        <td><span class="status-pill merged">Merged</span></td>
-                    </tr>
-                    <tr>
-                        <td>02</td>
-                        <td>
-                            <div class="user-cell">
-                                <span class="avatar">T2</span>
-                                Budi Santoso
-                            </div>
-                        </td>
-                        <td><span class="role-text">UI/UX Designer</span></td>
-                        <td><span class="status-pill review">In Review</span></td>
-                    </tr>
-                    <tr>
-                        <td>03</td>
-                        <td>
-                            <div class="user-cell">
-                                <span class="avatar">T3</span>
-                                Citra Lestari
-                            </div>
-                        </td>
-                        <td><span class="role-text">Technical Writer</span></td>
-                        <td><span class="status-pill open">Open</span></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-</body>
-</html>
-
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub Collab - Tim Pemilik & Anggota Tamu</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
-        }
-
-        body {
-            background-color: #08090c;
-            color: #f1f5f9;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 2.5rem 1.5rem;
-        }
-
-        /* WRAPPER DUA KOLOM */
-        .collab-wrapper {
-            display: flex;
-            gap: 24px;
-            width: 100%;
-            max-width: 1360px;
-            align-items: stretch;
-            justify-content: center;
-        }
-
-        @media (max-width: 1024px) {
-            .collab-wrapper {
-                flex-direction: column;
-                align-items: center;
+        @media (max-width: 900px) {
+            .collaboration-grid {
+                grid-template-columns: 1fr;
+            }
+            .guest-section {
+                grid-column: 1;
             }
         }
-
-        /* CONTAINER CARD TABEL */
-        .collab-section {
-            flex: 1;
-            width: 100%;
-            background: rgba(15, 17, 23, 0.85);
-            border-radius: 16px;
-            padding: 28px;
-            backdrop-filter: blur(12px);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* VARIAN TEMA KIRI (PEMILIK / CORE LEAD - VIOLET GLOW) */
-        .owner-section {
-            border: 1px solid rgba(139, 92, 246, 0.35);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 
-                        0 0 25px rgba(139, 92, 246, 0.12);
-        }
-
-        .owner-section:hover {
-            border-color: rgba(139, 92, 246, 0.7);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 
-                        0 0 35px rgba(139, 92, 246, 0.22);
-        }
-
-        /* VARIAN TEMA KANAN (TAMU / GUEST - ROSE GLOW) */
-        .guest-section {
-            border: 1px solid rgba(225, 29, 72, 0.3);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 
-                        0 0 25px rgba(225, 29, 72, 0.12);
-        }
-
-        .guest-section:hover {
-            border-color: rgba(225, 29, 72, 0.6);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8), 
-                        0 0 35px rgba(225, 29, 72, 0.22);
-        }
-
-        /* HEADER SECTION */
-        .table-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 24px;
-            padding-bottom: 16px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .header-title h2 {
-            font-size: 20px;
-            font-weight: 700;
-            color: #ffffff;
-            letter-spacing: -0.5px;
-            margin-top: 6px;
-        }
-
-        /* BADGES */
-        .badge {
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            display: inline-block;
-        }
-
-        .badge-purple {
-            background: rgba(139, 92, 246, 0.15);
-            color: #c4b5fd;
-            border: 1px solid rgba(139, 92, 246, 0.4);
-        }
-
-        .badge-red {
-            background: rgba(225, 29, 72, 0.15);
-            color: #ff4d6d;
-            border: 1px solid rgba(225, 29, 72, 0.35);
-        }
-
-        .count-tag {
-            font-size: 13px;
-            color: #94a3b8;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 6px 12px;
-            border-radius: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        /* TABEL MODERN */
-        .table-wrapper {
-            overflow-x: auto;
-            flex: 1;
-        }
-
-        .modern-table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 0 10px;
-            text-align: left;
-        }
-
-        .modern-table th {
-            color: #64748b;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
-            padding: 0 16px 8px;
-            font-weight: 600;
-        }
-
-        .modern-table tbody tr {
-            background: #111319;
-            transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
-            border-radius: 10px;
-        }
-
-        .owner-section .modern-table tbody tr:hover {
-            background: #171624;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 20px rgba(139, 92, 246, 0.18);
-        }
-
-        .guest-section .modern-table tbody tr:hover {
-            background: #181b24;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 20px rgba(225, 29, 72, 0.18);
-        }
-
-        .modern-table td {
-            padding: 16px;
-            font-size: 14px;
-            color: #cbd5e1;
-        }
-
-        .modern-table td:first-child {
-            border-top-left-radius: 10px;
-            border-bottom-left-radius: 10px;
-            font-weight: 700;
-            width: 50px;
-        }
-
-        .owner-section .modern-table td:first-child {
-            color: #c4b5fd;
-        }
-
-        .guest-section .modern-table td:first-child {
-            color: #ff4d6d;
-        }
-
-        .modern-table td:last-child {
-            border-top-right-radius: 10px;
-            border-bottom-right-radius: 10px;
-        }
-
-        /* USER & AVATAR */
-        .user-cell {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-weight: 600;
-            color: #f8fafc;
-        }
-
-        .avatar {
-            width: 34px;
-            height: 34px;
-            border-radius: 50%;
-            color: #ffffff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            font-weight: 700;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .avatar-owner {
-            background: linear-gradient(135deg, #7c3aed, #4c1d95);
-            box-shadow: 0 0 12px rgba(139, 92, 246, 0.45);
-        }
-
-        .avatar-guest {
-            background: linear-gradient(135deg, #e11d48, #881337);
-            box-shadow: 0 0 12px rgba(225, 29, 72, 0.4);
-        }
-
-        .role-text {
-            color: #94a3b8;
-            font-size: 13px;
-        }
-
-        /* PILLS / STATUS */
-        .status-pill {
-            display: inline-block;
-            padding: 5px 12px;
-            border-radius: 6px;
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 0.3px;
-        }
-
-        .status-pill.owner-lead {
-            background: rgba(139, 92, 246, 0.15);
-            color: #ddd6fe;
-            border: 1px solid rgba(139, 92, 246, 0.4);
-        }
-
-        .status-pill.maintainer {
-            background: rgba(56, 189, 248, 0.12);
-            color: #7dd3fc;
-            border: 1px solid rgba(56, 189, 248, 0.35);
-        }
-
-        .status-pill.merged {
-            background: rgba(34, 197, 94, 0.12);
-            color: #4ade80;
-            border: 1px solid rgba(34, 197, 94, 0.3);
-        }
-
-        .status-pill.review {
-            background: rgba(234, 179, 8, 0.12);
-            color: #fde047;
-            border: 1px solid rgba(234, 179, 8, 0.3);
-        }
-
-        .status-pill.open {
-            background: rgba(225, 29, 72, 0.15);
-            color: #ff4d6d;
-            border: 1px solid rgba(225, 29, 72, 0.35);
-        }
     </style>
 </head>
 <body>
 
-    <div class="collab-wrapper">
+    <div class="collaboration-grid">
 
-        <!-- ================= TABEL KIRI: PEMILIK / CORE TEAM ================= -->
-        <div class="collab-section owner-section">
+        <!-- TABEL TAMU (TERLOKASI PAS DI SISI KANAN TENGAH HALAMAN) -->
+        <div class="guest-section">
             <div class="table-header">
                 <div class="header-title">
-                    <span class="badge badge-purple">Project Owner</span>
-                    <h2>Tabel Pemilik Collab</h2>
-                </div>
-                <span class="count-tag">3 Maintainer</span>
-            </div>
-
-            <div class="table-wrapper">
-                <table class="modern-table">
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Nama Pemilik</th>
-                            <th>Fokus / Peran</th>
-                            <th>Hak Akses</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>01</td>
-                            <td>
-                                <div class="user-cell">
-                                    <span class="avatar avatar-owner">P1</span>
-                                    Rizky Pratama
-                                </div>
-                            </td>
-                            <td><span class="role-text">Lead Architect & Repo Owner</span></td>
-                            <td><span class="status-pill owner-lead">Repo Admin</span></td>
-                        </tr>
-                        <tr>
-                            <td>02</td>
-                            <td>
-                                <div class="user-cell">
-                                    <span class="avatar avatar-owner">P2</span>
-                                    Dewi Anggraeni
-                                </div>
-                            </td>
-                            <td><span class="role-text">Backend & Cloud Maintainer</span></td>
-                            <td><span class="status-pill maintainer">Maintainer</span></td>
-                        </tr>
-                        <tr>
-                            <td>03</td>
-                            <td>
-                                <div class="user-cell">
-                                    <span class="avatar avatar-owner">P3</span>
-                                    Fajar Hidayat
-                                </div>
-                            </td>
-                            <td><span class="role-text">DevOps & CI/CD Pipeline</span></td>
-                            <td><span class="status-pill maintainer">Maintainer</span></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <!-- ================= TABEL KANAN: GUEST CONTRIBUTORS ================= -->
-        <div class="collab-section guest-section">
-            <div class="table-header">
-                <div class="header-title">
-                    <span class="badge badge-red">Guest Contributor</span>
+                    <span class="badge-red">Guest Contributor</span>
                     <h2>Tabel Anggota Tamu</h2>
                 </div>
                 <span class="count-tag">3 Kontributor</span>
@@ -618,7 +239,7 @@
                             <td>01</td>
                             <td>
                                 <div class="user-cell">
-                                    <span class="avatar avatar-guest">T1</span>
+                                    <span class="avatar">T1</span>
                                     Asep Supriatna
                                 </div>
                             </td>
@@ -629,7 +250,7 @@
                             <td>02</td>
                             <td>
                                 <div class="user-cell">
-                                    <span class="avatar avatar-guest">T2</span>
+                                    <span class="avatar">T2</span>
                                     Budi Santoso
                                 </div>
                             </td>
@@ -640,7 +261,7 @@
                             <td>03</td>
                             <td>
                                 <div class="user-cell">
-                                    <span class="avatar avatar-guest">T3</span>
+                                    <span class="avatar">T3</span>
                                     Citra Lestari
                                 </div>
                             </td>
